@@ -2,6 +2,8 @@
 
 A basic DMS prototype that detects drowsiness by tracking eye closure using MediaPipe.
 
+<img width="804" height="629" alt="Screenshot 2026-01-23 030746" src="https://github.com/user-attachments/assets/83d946c7-d6d6-4164-b248-eec8a1eb2f1c" />
+
 ## Setup
 
 ```bash
@@ -15,14 +17,11 @@ Just run:
 python dms.py
 ```
 
-To use a video file instead of webcam, edit line 16 in `dms.py`:
-```python
-video_path = "your_video.mp4"
-```
-
 ## How it works
 
 I'm using MediaPipe Face Mesh which gives 468 facial landmarks. From those, I extract the 6 key points around each eye and calculate the Eye Aspect Ratio (EAR).
+
+<img width="767" height="641" alt="Screenshot 2026-01-23 030808" src="https://github.com/user-attachments/assets/6eecfef2-a6c1-4c4d-9d47-dc34e32aa9ea" />
 
 **EAR formula:** `(vertical_dist1 + vertical_dist2) / (2 * horizontal_dist)`
 
